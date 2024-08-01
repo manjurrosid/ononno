@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>অনন্য ডট কম । বিশ্বস্ত ইকমার্স প্রতিষ্ঠান</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom CSS File -->
+  <link href="style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ComingSoon
+  * Template URL: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center">
+
+      <img src="assets/img/logo.png" alt="Ononno.com" style="width:90vw; max-width: 550px;padding:30px;">
+      <h2 style="max-width: 960px;text-align: center;">আমাদের ওয়েবসাইটের কাজ চলমান, অতিশীগ্রই আমরা ওয়েবসাইট সকলের জন্য উন্মুক্ত করে দেব। অনুগ্রহপূর্বক অপেক্ষা করুন।</h2>
+      <div class="countdown d-flex justify-content-center" data-count="2024/9/1">
+        <div>
+          <h3>%d</h3>
+          <h4>দিন</h4>
+        </div>
+        <div>
+          <h3>%h</h3>
+          <h4>ঘন্টা</h4>
+        </div>
+        <div>
+          <h3>%m</h3>
+          <h4>মিনিট</h4>
+        </div>
+        <div>
+          <h3>%s</h3>
+          <h4>সেকেন্ড</h4>
+        </div>
+      </div>
+    <div>
+      <h4>আপাতত সকল আপডেট পেতে আমাদের সোশ্যাল একাউন্টগুলোতে যুক্ত হতে পারেন!</h4>
+      <div class="social-links text-center">
+        <a href="https://www.facebook.com/ononnodotcom" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/ononnodotcom" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/@ononnodotcom" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Countdown Script -->
+  <script>
+    let countdown = document.querySelector('.countdown');
+    if (countdown) {
+      const output = countdown.innerHTML;
+
+      const arabicToBengali = function(num) {
+        const bengaliDigits = '০১২৩৪৫৬৭৮৯';
+        return num.toString().split('').map(digit => bengaliDigits[digit]).join('');
+      };
+
+      const countDownDate = function() {
+        let timeleft = new Date(countdown.getAttribute('data-count')).getTime() - new Date().getTime();
+
+        let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = output
+          .replace('%d', arabicToBengali(days))
+          .replace('%h', arabicToBengali(hours))
+          .replace('%m', arabicToBengali(minutes))
+          .replace('%s', arabicToBengali(seconds));
+      };
+
+      countDownDate();
+      setInterval(countDownDate, 1000);
+    }
+  </script>
+</body>
+
+</html>
